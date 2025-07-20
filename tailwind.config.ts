@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'heading': ['Orbitron', 'monospace'],
+				'body': ['Rajdhani', 'sans-serif'],
+				'tech': ['Space Grotesk', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
