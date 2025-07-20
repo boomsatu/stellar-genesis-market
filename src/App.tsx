@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import Collections from "./pages/Collections";
 import CreateNFT from "./pages/CreateNFT";
+import NFTDetail from "./pages/NFTDetail";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +34,7 @@ const App = () => (
                   <Route path="/marketplace" element={<Marketplace />} />
                   <Route path="/collections" element={<Collections />} />
                   <Route path="/create" element={<CreateNFT />} />
+                  <Route path="/nft/:id" element={<NFTDetail />} />
                   <Route path="/profile/:address" element={<Profile />} />
                   <Route path="/profile" element={<Profile />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
