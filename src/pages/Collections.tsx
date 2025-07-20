@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -5,6 +6,8 @@ import { Input } from '@/components/ui/input';
 import { Search, TrendingUp, Users, Zap, ExternalLink } from 'lucide-react';
 
 const Collections = () => {
+  const navigate = useNavigate();
+  
   const collections = [
     {
       id: 1,
@@ -191,7 +194,10 @@ const Collections = () => {
                   </div>
 
                   {/* Action Button */}
-                  <Button className="w-full btn-cyber group">
+                  <Button 
+                    onClick={() => navigate('/marketplace')}
+                    className="w-full btn-cyber group"
+                  >
                     View Collection
                     <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>

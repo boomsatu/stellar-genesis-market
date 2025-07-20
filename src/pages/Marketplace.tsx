@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Search, Filter, Grid, List, Heart, Eye, ShoppingCart, TrendingUp } from 'lucide-react';
 
 const Marketplace = () => {
+  const navigate = useNavigate();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -191,7 +193,11 @@ const Marketplace = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex space-x-2">
-                        <Button size="sm" className="btn-cyber flex-1">
+                        <Button 
+                          size="sm" 
+                          className="btn-cyber flex-1"
+                          onClick={() => navigate(`/nft/${nft.id}`)}
+                        >
                           <ShoppingCart className="w-4 h-4 mr-1" />
                           Buy Now
                         </Button>
@@ -205,7 +211,10 @@ const Marketplace = () => {
                 
                 <div className={`p-4 ${viewMode === 'list' ? 'flex-1' : ''}`}>
                   <div className="mb-3">
-                    <h3 className="text-lg font-heading font-bold text-gradient-cyber mb-1 line-clamp-1">
+                    <h3 
+                      className="text-lg font-heading font-bold text-gradient-cyber mb-1 line-clamp-1 cursor-pointer hover:text-primary transition-colors"
+                      onClick={() => navigate(`/nft/${nft.id}`)}
+                    >
                       {nft.name}
                     </h3>
                     <p className="text-sm text-muted-foreground font-body">{nft.collection}</p>
@@ -217,7 +226,11 @@ const Marketplace = () => {
                       <div className="text-lg font-tech font-bold text-gradient-neon">{nft.price}</div>
                     </div>
                     <div className="text-right">
-                      <Button size="sm" className="btn-cyber">
+                      <Button 
+                        size="sm" 
+                        className="btn-cyber"
+                        onClick={() => navigate(`/nft/${nft.id}`)}
+                      >
                         Buy Now
                       </Button>
                     </div>
